@@ -1,0 +1,50 @@
+# general
+spring:
+  application:
+    name: ecandy_aggregator
+server:
+  port: 8060
+# logging
+# OFF << FATAL << ERROR << WARN << INFO << DEBUG << TRACE << ALL
+logging:
+  level.com.example.demo: DEBUG
+  file:
+    name: "P:/Java Workspace/aggregator/${spring.application.name}.log"
+# currency
+currency:
+  sourceCurrencies:
+  - "USD"
+  - "GBP"
+  - "JPY"
+  - "AUD"
+  - "CHF"
+  - "HKD"
+  - "CAD"
+  - "EUR"
+  outputCurrency: "EUR"
+  source: "http://localhost:8080/currencyConversion"
+# source
+source:
+  outputFormat: "yyyy-MM-dd"
+  source1: "source1"
+  source2: "source2"
+  source3: "source3"
+  source4: "source4"
+  sourceConfigs:
+    source1:
+      url: "http://localhost:8080/products/xml?source=1"
+      dateFormat: "yyyy-MM-dd"
+    source2:
+      url: "http://localhost:8080/products/xml?source=2"
+      dateFormat: "dd-MM-yyyy"
+    source3:
+      url: "http://localhost:8080/products/xml?source=3"
+      dateFormat: "dd.MM.yyyy"
+    source4:
+      url: "http://localhost:8080/products/json"
+      dateFormat: "yyyy-MM-dd"
+# validation
+validation:
+  validationType: LENIENT
+  priceRegexpStrict: ^(([1-9]\d*)|0)([\,\.]\d+)?
+  priceRegexpLenient: (\D*)([1-9]\d*|0)([\,\.]\d+)(\D*)
