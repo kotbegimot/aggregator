@@ -44,6 +44,12 @@ public class HttpRequestService {
         return response;
     }
 
+    /**
+     * Performs http GET request and returns it's response
+     *
+     * @param urlStr - URL
+     * @return response string
+     */
     public String getRequest(String urlStr) {
         String response = "";
         try {
