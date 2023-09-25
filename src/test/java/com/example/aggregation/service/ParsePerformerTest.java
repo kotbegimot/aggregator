@@ -1,16 +1,15 @@
 package com.example.aggregation.service;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class ParsePerformerTest {
 
     @Test
+    @DisplayName("Should Throw Exception For Unsupported Source Type")
     void parseThrowException() {
         Assertions.assertThrows(UnsupportedOperationException.class, () -> {
             ParsePerformer performer = new ParsePerformer(new ArrayList<>());

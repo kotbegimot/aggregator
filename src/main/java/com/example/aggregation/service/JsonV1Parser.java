@@ -13,6 +13,9 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Implementation of {@Parser} that uses data loaded from JSON ver.1 source.
+ */
 @Service
 @RequiredArgsConstructor
 public class JsonV1Parser implements Parser {

@@ -18,6 +18,9 @@ import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Implementation of {@Parser} that uses data loaded from XML ver.3 source.
+ */
 @Service
 @RequiredArgsConstructor
 public class XmlV3Parser implements Parser {
